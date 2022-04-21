@@ -1,0 +1,37 @@
+from falcor import *
+
+def render_graph_DefaultRenderGraph():
+    g = RenderGraph('DefaultRenderGraph')
+    loadRenderPassLibrary('ErrorMeasurePass.dll')
+    loadRenderPassLibrary('Utils.dll')
+    loadRenderPassLibrary('CSM.dll')
+    loadRenderPassLibrary('BSDFViewer.dll')
+    loadRenderPassLibrary('MinimalPathTracer.dll')
+    loadRenderPassLibrary('AccumulatePass.dll')
+    loadRenderPassLibrary('Antialiasing.dll')
+    loadRenderPassLibrary('BlitPass.dll')
+    loadRenderPassLibrary('DebugPasses.dll')
+    loadRenderPassLibrary('ForwardLightingPass.dll')
+    loadRenderPassLibrary('DepthPass.dll')
+    loadRenderPassLibrary('SVGFPass.dll')
+    loadRenderPassLibrary('GBuffer.dll')
+    loadRenderPassLibrary('PixelInspectorPass.dll')
+    loadRenderPassLibrary('ImageLoader.dll')
+    loadRenderPassLibrary('MegakernelPathTracer.dll')
+    loadRenderPassLibrary('PassLibraryTemplate.dll')
+    loadRenderPassLibrary('SceneDebugger.dll')
+    loadRenderPassLibrary('SkyBox.dll')
+    loadRenderPassLibrary('SSAO.dll')
+    loadRenderPassLibrary('TestBlitPass.dll')
+    loadRenderPassLibrary('TemporalDelayPass.dll')
+    loadRenderPassLibrary('ToneMapper.dll')
+    loadRenderPassLibrary('WhittedRayTracer.dll')
+    loadRenderPassLibrary('WireframePass.dll')
+    WireframePass = createPass('WireframePass')
+    g.addPass(WireframePass, 'WireframePass')
+    g.markOutput('WireframePass.output')
+    return g
+
+DefaultRenderGraph = render_graph_DefaultRenderGraph()
+try: m.addGraph(DefaultRenderGraph)
+except NameError: None

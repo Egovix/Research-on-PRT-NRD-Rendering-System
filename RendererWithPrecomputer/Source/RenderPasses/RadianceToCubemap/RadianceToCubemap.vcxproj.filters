@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="RadianceToCubemap.cpp" />
+    <ClCompile Include="haar.cpp" />
+    <ClCompile Include="LightComputer.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="RadianceToCubemap.h" />
+    <ClInclude Include="haar_tpi.h" />
+    <ClInclude Include="my_haar.h" />
+    <ClInclude Include="QuadTree.h" />
+    <ClInclude Include="LightComputer.h" />
+    <ClInclude Include="half.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ShaderSource Include="RadianceToCubemapTracer.rt.slang" />
+    <ShaderSource Include="RadianceToCubemapTracer.slang" />
+  </ItemGroup>
+</Project>
